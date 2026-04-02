@@ -51,48 +51,11 @@ STRATUM creates depth fields where visual elements exist in true 3D space betwee
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    subgraph INPUT_S["📐 Depth Input"]
-        direction TB
-        DEPTH["Depth Map\nNeural · Stereo · Embedded"]
-        SCMD["SENTIO Commands\nNarrative depth cues"]
-    end
+<div align="center">
 
-    subgraph CORE_ST["⚙️ core"]
-        direction TB
-        EST["Depth Estimator\nMonocular + stereo"]
-        DECOMP["Layer Decomposer\n16 planes · Depth peeling"]
-        COMP["Multi-Plane Compositor\nBack-to-front alpha blending"]
-        EST --> DECOMP --> COMP
-    end
+<img src="./docs/diagrams/architecture.svg" alt="Architecture" width="100%"/>
 
-    subgraph RENDER_S["🖥️ renderer"]
-        direction TB
-        VK["Vulkan Compute\nCustom shaders"]
-        LYR["Layer Manager\n16 × 8K planes"]
-        BLEND["Transparency Blend\n85% optical clarity"]
-        VK --> LYR --> BLEND
-    end
-
-    subgraph OUTPUT_S["✨ Volumetric Output"]
-        VOL["3D Volume\n0.5 – 15 m depth\nNo glasses · Zero fatigue"]
-    end
-
-    DEPTH --> EST
-    SCMD -.-> DECOMP
-    COMP --> VK
-    BLEND --> VOL
-
-    style INPUT_S fill:#1a1a2e,stroke:#64748b,color:#fff
-    style CORE_ST fill:#1a1a2e,stroke:#94a3b8,color:#fff
-    style RENDER_S fill:#1a1a2e,stroke:#64748b,color:#fff
-    style OUTPUT_S fill:#0a0a0a,stroke:#64748b,color:#cbd5e1,stroke-width:3px
-    style VOL fill:#64748b,stroke:#64748b,color:#fff
-```
-
-> **Pipeline**: Depth data → neural estimation → 16-plane decomposition via depth peeling → Vulkan compute shaders → 8K per-layer rendering → 85% transparency blending → glasses-free volumetric field spanning 0.5–15m, frame-locked to SPECTRA at 240 Hz.
-
+</div>
 <br/>
 
 ## Modules
