@@ -11,11 +11,11 @@ namespace stratum {
 
 /// Configuration for the volumetric engine.
 struct VolumetricConfig {
-    uint32_t layer_count = 4;
+    uint32_t layer_count = 16;       // 16 depth planes per website spec
     float depth_range_m = 15.0f;
-    float transparency = 0.85f;
-    uint32_t width = 3840;
-    uint32_t height = 2160;
+    float transparency = 0.85f;      // 85% optical clarity
+    uint32_t width = 7680;           // 8K per layer
+    uint32_t height = 4320;
     bool spectra_sync = true;
 };
 

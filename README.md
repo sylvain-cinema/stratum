@@ -37,11 +37,13 @@ STRATUM creates depth fields where visual elements exist in true 3D space betwee
 ## Key Specifications
 
 <table>
-<tr><td><strong>Display Layers</strong></td><td>Multi-plane transparent OLED / MicroLED</td></tr>
-<tr><td><strong>Depth Range</strong></td><td>0.5 m – 15 m perceived depth</td></tr>
+<tr><td><strong>Depth Planes</strong></td><td>16 planes of volumetric depth</td></tr>
+<tr><td><strong>Resolution per Layer</strong></td><td>8K (7680 × 4320)</td></tr>
+<tr><td><strong>Transparency</strong></td><td>85% optical clarity</td></tr>
+<tr><td><strong>Eye Strain</strong></td><td>0° vergence conflict (zero fatigue)</td></tr>
+<tr><td><strong>Glasses Required</strong></td><td>None</td></tr>
 <tr><td><strong>Compositing Latency</strong></td><td>&lt;5 ms</td></tr>
-<tr><td><strong>Transparency</strong></td><td>&gt;85% optical clarity</td></tr>
-<tr><td><strong>Integration</strong></td><td>Frame-level sync with SPECTRA</td></tr>
+<tr><td><strong>Depth Range</strong></td><td>0.5 m – 15 m perceived depth</td></tr>
 <tr><td><strong>Rendering</strong></td><td>Vulkan / Metal compute pipeline</td></tr>
 </table>
 
