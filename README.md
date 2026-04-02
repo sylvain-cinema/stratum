@@ -1,39 +1,51 @@
-<![CDATA[<div align="center">
+<div align="center">
 
-```
-███████╗████████╗██████╗  █████╗ ████████╗██╗   ██╗███╗   ███╗
-██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██║   ██║████╗ ████║
-███████╗   ██║   ██████╔╝███████║   ██║   ██║   ██║██╔████╔██║
-╚════██║   ██║   ██╔══██╗██╔══██║   ██║   ██║   ██║██║╚██╔╝██║
-███████║   ██║   ██║  ██║██║  ██║   ██║   ╚██████╔╝██║ ╚═╝ ██║
-╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝
-```
+<img src="https://img.shields.io/badge/SYLVAIN-STRATUM-000000?style=for-the-badge&labelColor=64748b&color=000000" alt="STRATUM" height="40"/>
 
-**The Aether Layer — Volumetric Display System**
+### The Aether Layer
 
-[![CI](https://github.com/sylvain-cinema/stratum/actions/workflows/ci.yml/badge.svg)](https://github.com/sylvain-cinema/stratum/actions)
-[![License](https://img.shields.io/badge/License-Apache%202.0-gold.svg)](LICENSE)
+**Volumetric Display System**
 
-*Multi-plane transparent display compositing for glasses-free volumetric 3D imagery.*
+<br/>
+
+[![CI](https://github.com/sylvain-cinema/stratum/actions/workflows/ci.yml/badge.svg)](https://github.com/sylvain-cinema/stratum/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-Apache%202.0-64748b?style=flat-square)](LICENSE)
+[![C++](https://img.shields.io/badge/C++-20-00599C?style=flat-square&logo=cplusplus&logoColor=white)](https://isocpp.org)
+[![Vulkan](https://img.shields.io/badge/Vulkan-1.3-AC162C?style=flat-square&logo=vulkan&logoColor=white)](https://www.vulkan.org)
+[![Docs](https://img.shields.io/badge/docs-sylvain.github.io-f97316?style=flat-square)](https://sylvain-cinema.github.io)
+
+<br/>
+
+*Multi-plane transparent display compositing for glasses-free volumetric 3D.*
+*Visual elements exist in true 3D space between screen and audience.*
+*No glasses. No fatigue. Pure cinematic depth.*
 
 </div>
 
+<br/>
+
 ---
+
+<br/>
 
 ## Overview
 
-STRATUM creates depth fields where visual elements exist in true 3D space between the screen and audience. Using transparent display layers synchronized with SPECTRA's MicroLED canvas, it delivers glasses-free volumetric imagery — no headaches, no fatigue, pure cinematic depth.
+STRATUM creates depth fields where visual elements exist in true 3D space between the SPECTRA display and the audience. Using transparent display layers synchronized at frame level with SPECTRA's MicroLED canvas, it delivers glasses-free volumetric imagery with no headaches and no fatigue.
 
-### Key Specifications
+<br/>
 
-| Parameter | Value |
-|-----------|-------|
-| Display Layers | Multi-plane transparent OLED/MicroLED |
-| Depth Range | 0.5m – 15m perceived depth |
-| Compositing Latency | <5ms |
-| Transparency | >85% optical clarity |
-| Integration | Synchronized with SPECTRA at frame level |
-| Rendering | Vulkan/Metal compute pipeline |
+## Key Specifications
+
+<table>
+<tr><td><strong>Display Layers</strong></td><td>Multi-plane transparent OLED / MicroLED</td></tr>
+<tr><td><strong>Depth Range</strong></td><td>0.5 m – 15 m perceived depth</td></tr>
+<tr><td><strong>Compositing Latency</strong></td><td>&lt;5 ms</td></tr>
+<tr><td><strong>Transparency</strong></td><td>&gt;85% optical clarity</td></tr>
+<tr><td><strong>Integration</strong></td><td>Frame-level sync with SPECTRA</td></tr>
+<tr><td><strong>Rendering</strong></td><td>Vulkan / Metal compute pipeline</td></tr>
+</table>
+
+<br/>
 
 ## Architecture
 
@@ -46,26 +58,20 @@ graph LR
 
     F[SPECTRA Sync] --> C
     G[SENTIO Depth Commands] --> A
-
-    subgraph core
-        A
-        B
-    end
-
-    subgraph renderer
-        C
-        D
-    end
 ```
+
+<br/>
 
 ## Modules
 
 | Module | Description |
-|--------|-------------|
-| `core` | Volumetric engine, multi-plane compositor, depth estimation |
-| `renderer` | Vulkan rendering backend, layer management, transparency blending |
-| `integration` | SPECTRA synchronization and SENTIO command handling |
-| `calibration` | Layer-to-screen alignment, parallax correction |
+|:-------|:------------|
+| **`core`** | Volumetric engine · Multi-plane compositor · Depth estimation |
+| **`renderer`** | Vulkan rendering backend · Layer management · Transparency blending |
+| **`integration`** | SPECTRA synchronization · SENTIO command handling |
+| **`calibration`** | Layer-to-screen alignment · Parallax correction |
+
+<br/>
 
 ## Building
 
@@ -75,23 +81,34 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build . --parallel
 ```
 
+<br/>
+
 ## Sylvain Ecosystem
 
-| Repository | Description |
-|-----------|-------------|
-| [spectra](https://github.com/sylvain-cinema/spectra) | 16K MicroLED Display Engine |
-| [sonora](https://github.com/sylvain-cinema/sonora) | Wave Field Synthesis Audio Engine |
-| [sentio](https://github.com/sylvain-cinema/sentio) | Empathic AI Narrative Intelligence |
-| **stratum** (this repo) | Volumetric Display System |
-| [sylvain-sdk](https://github.com/sylvain-cinema/sylvain-sdk) | Unified Developer SDK |
+<table>
+<tr><td>🟡</td><td><a href="https://github.com/sylvain-cinema/spectra"><strong>spectra</strong></a></td><td>16K MicroLED Display Engine</td></tr>
+<tr><td>🔵</td><td><a href="https://github.com/sylvain-cinema/sonora"><strong>sonora</strong></a></td><td>Wave Field Synthesis Audio Engine</td></tr>
+<tr><td>🟣</td><td><a href="https://github.com/sylvain-cinema/sentio"><strong>sentio</strong></a></td><td>Empathic AI Narrative Intelligence</td></tr>
+<tr><td>⚪</td><td><strong>stratum</strong></td><td>Volumetric Display System</td><td><em>← you are here</em></td></tr>
+<tr><td>🟠</td><td><a href="https://github.com/sylvain-cinema/sylvain-sdk"><strong>sylvain-sdk</strong></a></td><td>Unified Developer SDK</td></tr>
+<tr><td>📖</td><td><a href="https://github.com/sylvain-cinema/sylvain.github.io"><strong>docs</strong></a></td><td>Developer Documentation</td></tr>
+</table>
+
+<br/>
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE).
+Licensed under the [Apache License, Version 2.0](LICENSE).
+
+<br/>
 
 ---
 
 <div align="center">
-<strong>SYLVAIN</strong> — The Future of Cinematic Storytelling
+<br/>
+
+<img src="https://img.shields.io/badge/SYLVAIN-The_Future_of_Cinematic_Storytelling-000000?style=for-the-badge&labelColor=64748b&color=111111" alt="Sylvain"/>
+
+<sub>Every Seat is the Best Seat</sub>
+
 </div>
-]]>
